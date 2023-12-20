@@ -1,0 +1,937 @@
+{
+	"info": {
+		"_postman_id": "679773a2-ad0f-4cae-8af8-826299b968f8",
+		"name": "Booking-hotel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19240663",
+		"_collection_link": "https://interstellar-rocket-965948.postman.co/workspace/contactbook~e5898274-fb43-42d7-aae7-5c78a14d8039/collection/19240663-679773a2-ad0f-4cae-8af8-826299b968f8?action=share&source=collection_link&creator=19240663"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create new user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"lewandoski@gmail.com\",\r\n    \"fullname\":\"Robert Lewandowski\",\r\n    \"password\":\"1234\",\r\n    \"phone\":\"0474733212\",\r\n    \"age\":35,\r\n    \"address\":\"TraVinh\",\r\n    \"sex\":\"male\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3333/api/v1/users",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find detail user",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get List All User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZW1haWwiOiJodXkxMjNAZ21haWwuY29tIiwiaWF0IjoxNjk1NDY5NDY3fQ.s5ZuJdpa50nO2fAFkKhyH-OWiQK3V_3VL7ldHkfaaXg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3333/api/v1/users/current-user",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"current-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3333/api/v1/users/4",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJuYW1jdEBnbWFpbC5jb20iLCJpYXQiOjE2OTU2Mjg5MDF9.K-vJi2HlYOaG13Tf8sjAUJrA369Yo9fepjgGBUg6sfU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullname\":\"Cu Nam\",\r\n    \"email\":\"namlol2gmail.com\",\r\n    \"password\":\"0123\",\r\n    \"phone\":\"094883334\"\r\n    \"age:34,\r\n    \"address\":\"TienGiang\",\r\n    \"sex\":\"female\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:3333/api/v1/users/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload Avatar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJ6enp6aW44NDFAZ21haWwuY29tIiwiaWF0IjoxNjk3Nzg4NDkzfQ.sazxEiUxgYnkLD1ndW_d4F53FlAXhoKVNwEVW4TleYc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/Users/Huy/Downloads/images.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3333/v1/users/upload",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"v1",
+								"users",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Multi delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3333/v1/users/multiple?ids=3,4",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"v1",
+								"users",
+								"multiple"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "3,4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Profile user",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:3069/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3069",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:3069/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3069",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refresh-token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:3069/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3069",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgot-password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"zzzzzin841@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3333/api/v1/auth/forgot-password",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Room",
+			"item": [
+				{
+					"name": "Create Room",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:3333/api/v1/room",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"api",
+								"v1",
+								"room"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update room",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiZW1haWwiOiJ6enp6emluODQxQGdtYWlsLmNvbSIsImlhdCI6MTY5NjY4OTM5OCwiZXhwIjoxNjk2NjkwMjk4fQ.A2bUNxvz1JgT80wkrGOER4N86jN4WP_6GQkRSIuTl6I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "occupancy",
+									"value": "4 human",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3333/api/v1/room/8",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"api",
+								"v1",
+								"room",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Room Type",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:3333/api/v1/room",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"api",
+								"v1",
+								"room"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update RoomType",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiZW1haWwiOiJ6enp6emluODQxQGdtYWlsLmNvbSIsImlhdCI6MTY5Njc1MDM1OSwiZXhwIjoxNjk2NzUxMjU5fQ.Ot3L1fisvj8q1Ms0TMECd1TnY-tD11DMN8mAPjE2Dyw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type_name\":\"Single BedRoom\",\r\n    \"price\":500000,\r\n    \"status\":1,\r\n    \"area\":22\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3333/api/v1/room/type/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"api",
+								"v1",
+								"room",
+								"type",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Detail Room",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiZW1haWwiOiJ6enp6emluODQxQGdtYWlsLmNvbSIsImlhdCI6MTY5NzAyOTQ1OSwiZXhwIjoxNjk3MDMwMzU5fQ.Is8yfzrXT9Wf_AwhC-jm2TCLxRzAK4vmj8-7VPavrPE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000i/v1/room/2",
+							"host": [
+								"localhost"
+							],
+							"port": "5000i",
+							"path": [
+								"v1",
+								"room",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List All Room",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiZW1haWwiOiJ6enp6emluODQxQGdtYWlsLmNvbSIsImlhdCI6MTY5Njc1MDM1OSwiZXhwIjoxNjk2NzUxMjU5fQ.Ot3L1fisvj8q1Ms0TMECd1TnY-tD11DMN8mAPjE2Dyw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3333/api/v1/room?items_per_page=8&page=1&roomtype=",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"api",
+								"v1",
+								"room"
+							],
+							"query": [
+								{
+									"key": "items_per_page",
+									"value": "8"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "roomtype",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List All Room Type",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiZW1haWwiOiJ6enp6emluODQxQGdtYWlsLmNvbSIsImlhdCI6MTY5NzAyNzk2NCwiZXhwIjoxNjk3NjMyNzY0fQ.52r0QHJK3PYT5xIGhXys7AZYDdql9gGgIqIRadamJBo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3333/v1/room/type",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"v1",
+								"room",
+								"type"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Room",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJicnVubzEyM0BnbWFpbC5jb20iLCJpYXQiOjE2OTY0MDk4ODEsImV4cCI6MTY5NjQ5NjI4MX0.tzQKyNFe7coMCFrBQI7UuGoawlFkbgZzxjgNgIABGP0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3333/api/v1/room/10",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"api",
+								"v1",
+								"room",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Room Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiZW1haWwiOiJ6enp6emluODQxQGdtYWlsLmNvbSIsImlhdCI6MTY5NjY2NTYxMSwiZXhwIjoxNjk2NjY2NTExfQ.TgD7LIHEOPlh_6peR_etQMni8aNEFjHbvsgJDqgn3Tc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3333/api/v1/room/type/5",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"api",
+								"v1",
+								"room",
+								"type",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Review",
+			"item": [
+				{
+					"name": "Create Review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiZW1haWwiOiJ6enp6emluODQxQGdtYWlsLmNvbSIsImlhdCI6MTY5NzI0NjM5MywiZXhwIjoxNjk3MjQ3MjkzfQ.AHibaLl2RdzD_nPh1q3WuYwh6ChxV4RmvP2s7xS1Ey0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ratings\":4,\r\n    \"comment\":\"Phòng tạm chất lượng, thiết kế cũng xịn xò và cũng đẹp, phục vụ tạm ổn\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3333/v1/review",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"v1",
+								"review"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FindAll Review",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "FindAll Review By Room",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiZW1haWwiOiJ6enp6emluODQxQGdtYWlsLmNvbSIsImlhdCI6MTY5NzI1MDA3MiwiZXhwIjoxNjk3MjUwOTcyfQ.f93RPkaBp72PWNd_ziqUXzD-MjJSMYg-F60G7Q91eDc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3333/v1/review/room",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"v1",
+								"review",
+								"room"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Review",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiZW1haWwiOiJ6enp6emluODQxQGdtYWlsLmNvbSIsImlhdCI6MTY5NzI1MDA3MiwiZXhwIjoxNjk3MjUwOTcyfQ.f93RPkaBp72PWNd_ziqUXzD-MjJSMYg-F60G7Q91eDc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3333/v1/review/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"v1",
+								"review",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find One Review",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3333/v1/review/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"v1",
+								"review",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Find All Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJ6enp6emluODQxQGdtYWlsLmNvbSIsImlhdCI6MTY5ODc1Njg4OX0.mUmafhjYHHAZBqXdFfO5v3GuuTipyYsBD_yGMjvdHiU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/v1/reservation",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"reservation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Order Room",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJ6enp6emluODQxQGdtYWlsLmNvbSIsImlhdCI6MTY5ODc1Njg4OX0.mUmafhjYHHAZBqXdFfO5v3GuuTipyYsBD_yGMjvdHiU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/v1/reservation",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"reservation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Contact",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJ6enp6emluODQxQGdtYWlsLmNvbSIsImlhdCI6MTY5OTUzODMwN30.YZj0E1dAhNVRIOYSG2v6_HKF6vIJuZ8q5ApgQFgDO_8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"guestName\":\"Le Anh Huy\",\r\n    \"guestEmail\":\"leanhhuy@gmail.com\",\r\n    \"address\":\"Tinh Bien, An Giang\",\r\n    \"phone\":\"094583834\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/v1/order/contact",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"order",
+								"contact"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "forgot and resset password",
+			"item": [
+				{
+					"name": "forgot password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"zzzzzin841@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/v1/forgot",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"forgot"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"token\":\"d41dib4if9de\",\r\n    \"password\":\"lv2023\",\r\n    \"password_confirm\":\"lv2023\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/v1/reset",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"reset"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
