@@ -37,4 +37,6 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## Information Project 
 About function:
 + Authentication: Register, Login
-+ Authorization : how to authorrization 
++ Authorization : how to authorrization : manager, receptionist, guest
++ Manage :  Room, User, Service, Booking
++ And anything sush as save image in  local
